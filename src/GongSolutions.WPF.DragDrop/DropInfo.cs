@@ -21,7 +21,7 @@ namespace GongSolutions.Wpf.DragDrop
     /// </remarks>
     public class DropInfo : IDropInfo
     {
-        private readonly ItemsControl itemParent;
+        public readonly ItemsControl itemParent;
 
         /// <inheritdoc />
         public object Data { get; set; }

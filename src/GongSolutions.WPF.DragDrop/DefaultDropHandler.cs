@@ -181,7 +181,7 @@ namespace GongSolutions.Wpf.DragDrop
             }
         }
 
-        protected static bool IsChildOf(UIElement targetItem, UIElement sourceItem)
+        public static bool IsChildOf(UIElement targetItem, UIElement sourceItem)
         {
             var parent = ItemsControl.ItemsControlFromItemContainer(targetItem);
 
@@ -198,7 +198,7 @@ namespace GongSolutions.Wpf.DragDrop
             return false;
         }
 
-        protected static bool TestCompatibleTypes(IEnumerable target, object data)
+        public static bool TestCompatibleTypes(IEnumerable target, object data)
         {
             bool InterfaceFilter(Type t, object o) => (t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>));
 
