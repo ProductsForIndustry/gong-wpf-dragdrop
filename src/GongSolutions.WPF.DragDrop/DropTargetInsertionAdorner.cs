@@ -1,9 +1,9 @@
-﻿using System;
+﻿using GongSolutions.Wpf.DragDrop.Utilities;
+using System;
 using System.Windows;
-using System.Windows.Media;
 using System.Windows.Controls;
-using GongSolutions.Wpf.DragDrop.Utilities;
 using System.Windows.Controls.Primitives;
+using System.Windows.Media;
 
 namespace GongSolutions.Wpf.DragDrop
 {

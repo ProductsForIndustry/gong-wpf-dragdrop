@@ -1,12 +1,12 @@
-﻿using System;
+﻿using GongSolutions.Wpf.DragDrop.Utilities;
+using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using GongSolutions.Wpf.DragDrop.Utilities;
-using JetBrains.Annotations;
 
 namespace GongSolutions.Wpf.DragDrop
 {

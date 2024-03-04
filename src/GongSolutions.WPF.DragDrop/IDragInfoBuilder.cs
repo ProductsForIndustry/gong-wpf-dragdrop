@@ -1,7 +1,7 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Windows;
 using System.Windows.Input;
-using JetBrains.Annotations;
 
 namespace GongSolutions.Wpf.DragDrop
 {

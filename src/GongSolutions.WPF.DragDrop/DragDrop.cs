@@ -1,3 +1,5 @@
+using GongSolutions.Wpf.DragDrop.Icons;
+using GongSolutions.Wpf.DragDrop.Utilities;
 using System;
 using System.Collections;
 using System.Linq;
@@ -7,8 +9,6 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using GongSolutions.Wpf.DragDrop.Icons;
-using GongSolutions.Wpf.DragDrop.Utilities;
 
 namespace GongSolutions.Wpf.DragDrop
 {
@@ -251,9 +251,9 @@ namespace GongSolutions.Wpf.DragDrop
                 var adornment = new ContentPresenter { Content = dragInfo.Data, ContentTemplate = template };
 
                 var preview = new DragDropEffectPreview(rootElement, adornment, GetEffectAdornerTranslation(dragInfo.VisualSource), dropInfo.Effects, dropInfo.EffectText, dropInfo.DestinationText)
-                              {
-                                  IsOpen = true
-                              };
+                {
+                    IsOpen = true
+                };
 
                 return preview;
             }
@@ -341,10 +341,10 @@ namespace GongSolutions.Wpf.DragDrop
                                      new GradientStop(Colors.AliceBlue, 1.0)
                                  };
             var gradientBrush = new LinearGradientBrush(stopCollection)
-                                {
-                                    StartPoint = new Point(0, 0),
-                                    EndPoint = new Point(0, 1)
-                                };
+            {
+                StartPoint = new Point(0, 0),
+                EndPoint = new Point(0, 1)
+            };
             borderFactory.SetValue(Panel.BackgroundProperty, gradientBrush);
             borderFactory.SetValue(Border.BorderBrushProperty, Brushes.DimGray);
             borderFactory.SetValue(Border.CornerRadiusProperty, new CornerRadius(3));

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GongSolutions.Wpf.DragDrop.Utilities;
+using System;
 using System.Collections;
 using System.Linq;
 using System.Windows;
@@ -7,7 +8,6 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Interop;
 using System.Windows.Media;
-using GongSolutions.Wpf.DragDrop.Utilities;
 
 namespace GongSolutions.Wpf.DragDrop
 {
@@ -306,10 +306,10 @@ namespace GongSolutions.Wpf.DragDrop
                         var sorter = DragDrop.TryGetDragPreviewItemsSorter(dragInfo, sender);
 
                         var itemsControl = new ItemsControl
-                                           {
-                                               ItemsSource = sorter?.SortDragPreviewItems(items) ?? items,
-                                               Tag = dragInfo
-                                           };
+                        {
+                            ItemsSource = sorter?.SortDragPreviewItems(items) ?? items,
+                            Tag = dragInfo
+                        };
 
                         itemsControl.SetBinding(ItemsControl.ItemTemplateProperty, new Binding(nameof(this.ItemTemplate)) { Source = this });
                         itemsControl.SetBinding(ItemsControl.ItemTemplateSelectorProperty, new Binding(nameof(this.ItemTemplateSelector)) { Source = this });
@@ -330,10 +330,10 @@ namespace GongSolutions.Wpf.DragDrop
                 else
                 {
                     var contentPresenter = new ContentPresenter
-                                           {
-                                               Content = dragInfo.Data,
-                                               Tag = dragInfo
-                                           };
+                    {
+                        Content = dragInfo.Data,
+                        Tag = dragInfo
+                    };
 
                     contentPresenter.SetBinding(ContentPresenter.ContentTemplateProperty, new Binding(nameof(this.ItemTemplate)) { Source = this });
                     contentPresenter.SetBinding(ContentPresenter.ContentTemplateSelectorProperty, new Binding(nameof(this.ItemTemplateSelector)) { Source = this });

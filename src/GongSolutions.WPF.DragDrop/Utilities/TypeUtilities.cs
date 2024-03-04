@@ -1,10 +1,10 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Collections;
-using System.Collections.ObjectModel;
-using JetBrains.Annotations;
 
 namespace GongSolutions.Wpf.DragDrop.Utilities
 {

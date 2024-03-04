@@ -1,13 +1,13 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Media;
-using System.Reflection;
-using System.Collections;
-using System.Windows.Controls.Primitives;
 
 namespace GongSolutions.Wpf.DragDrop.Utilities
 {

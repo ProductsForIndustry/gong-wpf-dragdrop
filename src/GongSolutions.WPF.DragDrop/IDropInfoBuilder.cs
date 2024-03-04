@@ -1,5 +1,5 @@
-using System.Windows;
 using JetBrains.Annotations;
+using System.Windows;
 
 namespace GongSolutions.Wpf.DragDrop
 {
