@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Data;
 
 namespace GongSolutions.Wpf.DragDrop.Utilities
 {
@@ -118,6 +119,43 @@ namespace GongSolutions.Wpf.DragDrop.Utilities
             return collection1 != null
                    && ReferenceEquals(collection1, collection2);
                    //&& collection1.IsObservableCollection();
+        }
+
+        /// <summary>
+        /// Tries to get an ordered list from the given enumerable.
+        /// If the enumerable is an ICollectionView, it returns the default view of the collection as a list of type T.
+        /// If the enumerable is already an IList, it returns the same list.
+        /// Otherwise, it converts the enumerable to a list of objects.
+        /// </summary>
+        /// <typeparam name="T">The type of the elements in the list.</typeparam>
+        /// <param name="enumerable">The enumerable to convert to a list.</param>
+        /// <returns>A list of type T.</returns>
+        public static IList TryGetDefaultViewList<T>(this IEnumerable enumerable)
+        {
+            if (enumerable is ICollectionView collectionView)
+            {
+                return CollectionViewSource.GetDefaultView(collectionView).Cast<T>().ToList();
+            }
+
+            if (enumerable is IList list)
+            {
+                return list;
+            }
+
+            return enumerable?.OfType<object>().ToList();
+        }
+
+        /// <summary>
+        /// Checks if both collections are of the same type.
+        /// </summary>
+        /// <param name="collection1">The first collection to compare.</param>
+        /// <param name="collection2">The second collection to compare.</param>
+        /// <returns>True if both collections are of the same type and have the same count.</returns>
+        public static bool IsSameCollectionType(this IList collection1, IList collection2)
+        {
+            return collection1 != null
+                   && collection1.GetType() == collection2.GetType()
+                   && collection1.Count == collection2.Count;
         }
     }
 }
